@@ -21,7 +21,6 @@ export default function AuthForm() {
     setMessage(null)
     setLoading(true)
 
-    const redirectTo = `${process.env.NEXT_PUBLIC_SITE_URL}/dashboard`
     const redirectTo = 
       typeof window !== 'undefined'? `${window.location.origin}/dashboard`: process.env.NEXT_PUBLIC_SITE_URL + '/dashboard'
 

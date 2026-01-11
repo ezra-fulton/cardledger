@@ -13,8 +13,15 @@ export default function Dashboard() {
     const supabase = getSupabase()
 
     supabase.auth.getUser().then(({ data }) => {
-      if (!data.user) router.push('/auth')
-      else setUser(data.user)
+      if (!data.user) {
+         router.push('/auth')
+         return(null)
+      }
+      if (data.user && !data.user.user_metadata?.password_set) {
+         router.push('/set-password')
+         return(null)
+      }
+      setUser(data.user)
     })
   }, [])
 

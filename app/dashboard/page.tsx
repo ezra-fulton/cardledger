@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { getSupabase } from '../lib/supabase'
 import { useRouter } from 'next/navigation'
+import LogoutButton from '../components/LogoutButton'
 
 export default function Dashboard() {
   const router = useRouter()
@@ -21,6 +22,7 @@ export default function Dashboard() {
     <div style={{ padding: '2rem' }}>
       <h1>Dashboard</h1>
       {user && <p>Welcome, {user.email}</p>}
+      <LogoutButton />
     </div>
   )
 }

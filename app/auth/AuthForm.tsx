@@ -24,6 +24,8 @@ export default function AuthForm() {
     const redirectTo = 
       typeof window !== 'undefined'? `${window.location.origin}/dashboard`: process.env.NEXT_PUBLIC_SITE_URL + '/dashboard'
 
+    console.log('redirectTo: ' + redirectTo)
+
     try {
       if (isLogin) {
         // Login with email + password

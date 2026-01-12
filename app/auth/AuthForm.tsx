@@ -22,7 +22,7 @@ export default function AuthForm() {
     setLoading(true)
 
     const redirectTo = 
-      typeof window !== 'undefined'? `${window.location.origin}/auth/callback`: process.env.NEXT_PUBLIC_SITE_URL + '/auth/callback'
+      typeof window !== 'undefined'? `${window.location.origin}/dashboard`: process.env.NEXT_PUBLIC_SITE_URL + '/dashboard'
 
     console.log('redirectTo: ' + redirectTo)
 

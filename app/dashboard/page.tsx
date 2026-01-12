@@ -17,10 +17,15 @@ export default function Dashboard() {
          router.push('/auth')
          return(null)
       }
-      if (data.user && !data.user.user_metadata?.password_set) {
-         router.push('/set-password')
-         return(null)
+      if (
+          user &&
+          user.app_metadata?.provider === 'email' &&
+          user.user_metadata?.password_set !== true
+      ) {
+          router.push('/set-password')
+          return null
       }
+
       setUser(data.user)
     })
   }, [])
